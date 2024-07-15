@@ -4,27 +4,29 @@ en las secciones señaladas */
 /*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
 coloque nas sessões indicadas*/
 
-:root{
-    /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
-   --cor-de-fundo: #F5F5F5;
-   --cor-de-link: #000;
+:root {
+  /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
+  /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+  --cor-de-fundo: #f4f4f9;
+  --cor-de-link: #000;
 }
 
 body {
-    box-sizing: border-box;
-    background-color: var(--cor-de-fundo) ;
-    font-family: 'Raleway';
-    margin: 0;
-    padding: 0;
-    line-height: 1;
+  box-sizing: border-box;
+  background-color: var(--cor-de-fundo);
+  font-family: 'Raleway';
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
-ol, ul,li {
-    list-style: none;
+ol,
+ul,
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    color: var(--cor-de-link);
+a {
+  text-decoration: none;
+  color: var(--cor-de-link);
 }
 
 /*En este desafío nosostros gustaríamos que ustedes intentaran utilizar la metodología BEM. 
@@ -36,97 +38,574 @@ desarrollo web. La idea detrás de esto es dividir la interfaz de usuario en blo
 independientes. Esto hace que el desarrollo de la interfaz sea fácil y rápido, incluso
 con una interfaz de usuario compleja, y permite la reutilización del código existente sin copiar y pegar.
 
-Enlace de la documentación oficial!
+Enlace de la documeaafntación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
 /*Sección Menu*/
 
-section.menu{
+section.menu {
+  color: #464646; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
+  position: sticky;
+  max-width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: whitesmoke;
+}
+.menu__header {
+  display: flex;
+  align-items: center;
+}
 
+.menu__header img {
+  height: 40px; /* Adjust as needed */
+  margin-right: 15px;
+}
+
+.menu__title {
+  font-size: 24px;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__list__item {
+  margin: 0 15px;
+}
+
+.menu__list__item a {
+  text-decoration: none;
+  color: #464646;
+  font-size: 18px;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.menu__list__item a:hover {
+  color: #ddd;
+}
+
+.menu__list__item__contato a {
+  font-weight: bold;
+  color: #464646;
+  font-weight: 700;
+}
+
+.menu__list__item__contato a:hover {
+  color: #ddd;
 }
 
 /*Sección Title*/
 
-section.title{
+.title {
+  padding: 50px 20px;
+}
 
+.title__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  margin: 0 auto;
+}
+
+.title__profile {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  margin-left: 20px;
+  object-fit: cover;
+}
+
+.title__container {
+  max-width: 600px;
+  text-align: left;
+}
+
+.title__bio {
+  font-size: 24px;
+  color: #464646;
+  margin-bottom: 10px;
+}
+
+.title__subsection {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Styles for the social network links */
+.title__network {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.title__network__item {
+  margin: 10px 15px 10px 0;
+}
+
+.title__network__item a {
+  text-decoration: none;
+  color: #0073e6;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.title__network__item a:hover {
+  color: #005bb5;
+}
+
+.title__network__item img {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.title__network__item a:hover img {
+  transform: translateX(5px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .title__div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title__profile {
+    margin: 20px 0;
+    width: 400px;
+    height: 400px;
+  }
+
+  .title__network {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title__network__item {
+    margin: 5px 0;
+  }
 }
 
 /*Sección About*/
-
-section.about{
-
+.about {
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/*Sección Hobbies*/
-
-section.hobbies{
-    
+.about__container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* Experiencia Académica*/
-
-section.academic{
-
+/* Styles for the title */
+.about__title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* experiencia*/
-
-section.experience{
-
+/* Styles for the paragraphs */
+.about__paragraph {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/*Contacto*/
-
-section.formcontato{
-
+/* Styles for the signature image */
+.about__container img {
+  display: block;
+  margin: 20px auto 0;
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
-/*footeer*/
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 10px;
+  }
 
-section.footer{
-   
+  .about__title {
+    font-size: 24px;
+  }
+
+  .about__paragraph {
+    font-size: 16px;
+  }
+
+  .about__container img {
+    width: 120px; /* Adjust size as needed */
+  }
+}
+/* General styles for the skills section */
+.skills,
+.hobbies {
+  background-color: #f4f4f9;
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/* Vamos a desafiarnos trabajando con responsividad?
-Utiliza las referencias de los breakpoints @media abajo */
+.skills__title,
+.hobbies__title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
 
+/* Line container for the skills/hobbies */
+.skills__line,
+.hobbies__line {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual skill/hobby boxes */
+.skills__box,
+.hobbies__box {
+  width: 200px; /* Adjust size as needed */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+.skills__box ul,
+.hobbies__box ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skills__img,
+.hobbies__img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 60px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+}
+
+.skills__name,
+.hobbies__name {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .skills__box,
+  .hobbies__box {
+    width: 150px;
+  }
+
+  .skills__img,
+  .hobbies__img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skills__title,
+  .hobbies__title {
+    font-size: 24px;
+  }
+
+  .skills__name,
+  .hobbies__name {
+    font-size: 16px;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Estilos para la sección de Formación académica */
+.academic {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.academic__title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.academic__courses {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.academic__courses__box {
+  width: 300px; /* Ajustar según sea necesario */
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.academic__courses__item__img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.academic__courses__item__title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.academic__courses__item__subtitle {
+  color: #666;
+}
+.academic__courses__list {
+  padding: 0px;
+}
+
+/* Estilos para la sección de Experiencia Profesional/Proyectos */
+/* Estilos para la sección de Experiencia Profesional */
+.experience {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+}
+
+.experience__section__title {
+  text-align: center;
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.experience__box {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.experience__box:hover {
+  transform: translateY(-5px);
+}
+
+.experience__img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience__info {
+  flex: 1;
+}
+
+.experience__title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.experience__text {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.experience__description {
+  display: flex;
+}
+
+.experience__repo,
+.experience__demo {
+  margin-right: 10px;
+}
+
+.experience__botao--repo,
+.experience__botao--demo {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.experience__botao--repo:hover,
+.experience__botao--demo:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la sección de Contacto */
+.formcontato {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.formcontato__contacto {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.formcontato__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.formcontato__text {
+  text-align: left;
+  padding: 20px;
+}
+
+.formcontato__title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.formcontato__subtext {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.formcontato__form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.formcontato__input,
+.formcontato__textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.formcontato__botao {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formcontato__botao:hover {
+  background-color: #555;
+}
+
+/* Estilos para el footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.footer__rodape {
+  font-size: 14px;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .academic__courses__box,
+  .experience__box {
+    width: calc(100% - 40px);
+  }
+
+  .experience__box {
+    flex-direction: column;
+  }
+
+  .experience__img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 
 /*Tablet*/
 @media (min-width: 768px) {
+  /* Menú */
 
-/* Menú */
+  /*title*/
 
-/*title*/
+  /*Skills*/
 
-/*Skills*/
+  /*Hobbies*/
 
-/*Hobbies*/
+  /*Formación Académica*/
 
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-
+  /*Experiencia Profesional*/
 }
 
 /*Mobile*/
 @media (min-width: 425px) {
+  /*Menu*/
 
-/*Menu*/
+  /*Titulo*/
 
-/*Titulo*/
+  /*Sección sobre mi*/
 
-/*Sección sobre mi*/
+  /*Skills*/
 
-/*Skills*/
+  /*Hobbies*/
 
-/*Hobbies*/
- 
-/*Formación Académica*/
+  /*Formación Académica*/
 
-/*Experiencia Profesional*/
+  /*Experiencia Profesional*/
 
- /*Contacto*/
+  /*Contacto*/
 
-/*Footer*/
-
+  /*Footer*/
 }
